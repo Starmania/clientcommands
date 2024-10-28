@@ -14,7 +14,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
 public class RenderSettings {
     private static final List<Tuple<CEntitySelector, Boolean>> entityRenderSelectors = new ArrayList<>();
