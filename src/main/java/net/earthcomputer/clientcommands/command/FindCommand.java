@@ -63,9 +63,12 @@ public class FindCommand {
 
     private static void sendEntityFoundMessage(FabricClientCommandSource source, Entity entity) {
         String distance = "%.2f".formatted(Math.sqrt(entity.distanceToSqr(source.getPosition())));
-        source.sendFeedback(Component.translatable("commands.cfind.found.left", entity.getName(), distance)
-                .append(getLookCoordsTextComponent(entity.blockPosition()))
-                .append(Component.translatable("commands.cfind.found.right", entity.getName(), distance)));
+        source.sendFeedback(Component.translatable(
+            "commands.cfind.found",
+            entity.getName(),
+            getLookCoordsTextComponent(entity.blockPosition()),
+            distance
+        ));
     }
 
     private static class FindTask extends LongTask {
