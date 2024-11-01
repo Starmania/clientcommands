@@ -28,7 +28,9 @@
   "depends": {
     "minecraft": "${mcversion}",
     "fabricloader": ">=0.4.0",
-    "fabric-api": "*"
+    "fabric-api": "*",
+    "betterconfig": "*",
+    "clientarguments": "*"
   },
   "mixins": [
     "mixins.clientcommands.json"
