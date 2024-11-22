@@ -20,3 +20,8 @@ jobs:
             ~/.gradle/wrapper
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
       - run: ./gradlew test --stacktrace --no-daemon
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: test-results
+          path: build/reports/
