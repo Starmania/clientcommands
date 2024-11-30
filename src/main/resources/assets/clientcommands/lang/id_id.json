@@ -140,7 +140,6 @@
   "commands.cplayerinfo.ioException": "Terjadi sebuah kesalahan",
   "commands.cplayerinfo.getNameHistory.success": "%s memiliki nama nama berikut: %s",
 
-  "commands.cparticle.unsuitableParticleOption": "Tidak akan menampilkan partikel karena pengaturan partikel tidak cocok",
   "commands.cparticle.success": "Menampilkan partikel %s",
 
   "commands.cpermissionlevel.success": "Tingkat izin anda adalah %s",

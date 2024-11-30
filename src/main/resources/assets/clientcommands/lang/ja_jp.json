@@ -140,7 +140,6 @@
   "commands.cplayerinfo.ioException": "エラーが発生しました",
   "commands.cplayerinfo.getNameHistory.success": "%s は過去に次の名前を所持していました: %s",
 
-  "commands.cparticle.unsuitableParticleOption": "パーティクルの設定が不適当であるためパーティクルを表示しません",
   "commands.cparticle.success": "%s としてパーティクルを表示しています",
 
   "commands.cpermissionlevel.success": "あなたの権限レベルは %s です",

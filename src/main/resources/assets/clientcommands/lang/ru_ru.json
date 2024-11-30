@@ -126,7 +126,6 @@
   "commands.cplayerinfo.ioException": "Произошла ошибка",
   "commands.cplayerinfo.getNameHistory.success": "%s имел следующие ники: %s",
 
-  "commands.cparticle.unsuitableParticleOption": "Частицы не отображаются, так как настройки видео частиц не подходят.",
   "commands.cparticle.success": "Отображение частицы %s",
 
   "commands.cpermissionlevel.success": "Ваш уровень разрешений %s",

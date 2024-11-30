@@ -155,7 +155,6 @@
   "commands.cplayerinfo.ioException": "Ein Fehler ist aufgetreten",
   "commands.cplayerinfo.getNameHistory.success": "%s hatte die folgenden Namen: %s",
 
-  "commands.cparticle.unsuitableParticleOption": "Zeige keine Partikel an, weil die Partikel-Grafikeinstellung ungeeignet ist",
   "commands.cparticle.success": "Zeige Partikel %s an",
 
   "commands.cpermissionlevel.success": "Deine Berechtigungsstufe ist %s",
