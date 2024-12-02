@@ -293,6 +293,7 @@ abstract class CheckLanguageFilesTask : DefaultTask() {
 
             var allowNonIndexed = true
             var allowIndexed = true
+            var mixedIndexed = false
             var nextSpecifierIndex = 0
             for (formatSpecifier in legalFormatSpecifiers) {
                 if (!formatSpecifier.value.endsWith('s')) {
@@ -304,6 +305,7 @@ abstract class CheckLanguageFilesTask : DefaultTask() {
                     if (!allowIndexed) {
                         logger.error("$filename:$lineNumber: translation key '$key' mixes indexed and non-indexed format specifiers. Please use one or the other")
                         errored = true
+                        mixedIndexed = true
                         break
                     }
                     allowNonIndexed = false
@@ -312,6 +314,7 @@ abstract class CheckLanguageFilesTask : DefaultTask() {
                     if (!allowNonIndexed) {
                         logger.error("$filename:$lineNumber: translation key '$key' mixes indexed and non-indexed format specifiers. Please use one or the other")
                         errored = true
+                        mixedIndexed = true
                         break
                     }
                     allowIndexed = false
@@ -323,28 +326,31 @@ abstract class CheckLanguageFilesTask : DefaultTask() {
                 }
             }
 
-            enUs?.get(key)?.takeIf { it is JsonPrimitive && it.isString }?.let(JsonElement::getAsString)?.let { englishValue ->
-                val (englishLegalFormatSpecifiers, englishIllegalFormatSpecifiers) = formatSpecifierRegex.findAll(englishValue).partition { allowedFormatSpecifierRegex.matches(it.value) }
-                if (englishIllegalFormatSpecifiers.isEmpty() && englishLegalFormatSpecifiers.all { it.groups["argIndex"] == null }) {
-                    val numSpecifiers = englishLegalFormatSpecifiers.count { it.value.endsWith('s') }
-                    if (allowNonIndexed) {
-                        if (usedIndexes.size < numSpecifiers) {
-                            logger.error("$filename:$lineNumber: translation key '$key' does not have enough format specifiers. It only has ${usedIndexes.size} while the English has $numSpecifiers")
-                            errored = true
-                        } else if (usedIndexes.size > numSpecifiers) {
-                            logger.error("$filename:$lineNumber: translation key '$key' has extra format specifiers. It has ${usedIndexes.size} while the English only ha $numSpecifiers")
-                        }
-                    } else {
-                        for (i in 0 until numSpecifiers) {
-                            if (i !in usedIndexes) {
-                                logger.error("$filename:$lineNumber: translation key '$key' does not specify '%${i + 1}\$s' which is required because the English has $numSpecifiers format specifiers")
+            if (!mixedIndexed) {
+                enUs?.get(key)?.takeIf { it is JsonPrimitive && it.isString }?.let(JsonElement::getAsString)?.let { englishValue ->
+                    val (englishLegalFormatSpecifiers, englishIllegalFormatSpecifiers) = formatSpecifierRegex.findAll(englishValue).partition { allowedFormatSpecifierRegex.matches(it.value) }
+                    if (englishIllegalFormatSpecifiers.isEmpty() && englishLegalFormatSpecifiers.all { it.groups["argIndex"] == null }) {
+                        val numSpecifiers = englishLegalFormatSpecifiers.count { it.value.endsWith('s') }
+                        if (allowNonIndexed) {
+                            if (usedIndexes.size < numSpecifiers) {
+                                logger.error("$filename:$lineNumber: translation key '$key' does not have enough format specifiers. It only has ${usedIndexes.size} while the English has $numSpecifiers")
+                                errored = true
+                            } else if (usedIndexes.size > numSpecifiers) {
+                                logger.error("$filename:$lineNumber: translation key '$key' has extra format specifiers. It has ${usedIndexes.size} while the English only ha $numSpecifiers")
                                 errored = true
                             }
-                        }
-                        for (i in usedIndexes) {
-                            if (i >= numSpecifiers) {
-                                logger.error("$filename:$lineNumber: translation key '$key' specifies '%${i + 1}\$s' which is out of bounds for $numSpecifiers format specifiers existing in the English")
-                                errored = true
+                        } else {
+                            for (i in 0 until numSpecifiers) {
+                                if (i !in usedIndexes) {
+                                    logger.error("$filename:$lineNumber: translation key '$key' does not specify '%${i + 1}\$s' which is required because the English has $numSpecifiers format specifiers")
+                                    errored = true
+                                }
+                            }
+                            for (i in usedIndexes) {
+                                if (i >= numSpecifiers) {
+                                    logger.error("$filename:$lineNumber: translation key '$key' specifies '%${i + 1}\$s' which is out of bounds for $numSpecifiers format specifiers existing in the English")
+                                    errored = true
+                                }
                             }
                         }
                     }
