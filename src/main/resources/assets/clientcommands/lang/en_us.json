@@ -138,6 +138,7 @@
   "commands.cghostblock.fill.success": "%s ghost blocks filled",
   "commands.cghostblock.set.success": "Ghost block placed",
 
+  "commands.cgive.noSpace": "There is no space in your inventory for that item",
   "commands.cgive.notCreative": "Player must be in creative mode to give items to self",
   "commands.cgive.success": "Gave %s %s to self",
 
