@@ -35,7 +35,7 @@ public class CGiveCommand {
 
     private static int give(FabricClientCommandSource source, ItemInput itemInput, int count) throws CommandSyntaxException {
         LocalPlayer player = source.getPlayer();
-        if (!player.getAbilities().instabuild) {
+        if (!player.isCreative()) {
             throw NOT_CREATIVE_EXCEPTION.create();
         }
         MultiPlayerGameMode interactionManager = source.getClient().gameMode;
