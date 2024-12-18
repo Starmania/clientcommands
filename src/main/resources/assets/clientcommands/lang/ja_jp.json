@@ -19,7 +19,7 @@
   "commands.calias.addAlias.success": "次のエイリアスの追加に成功しました: \"%s\"",
   "commands.calias.file.readError": "エイリアスファイルの読み込みに失敗しました",
   "commands.calias.file.writeError": "エイリアスファイルへの書き込みに失敗しました",
-  "commands.calias.illegalFormatException": "文字のフォーマットが不正であるか引数が多すぎる・もしくは少なすぎます。",
+  "commands.calias.illegalFormatException": "文字のフォーマットが不正であるか引数が多すぎる・もしくは少なすぎます",
   "commands.calias.listAliases.noAliasesRegistered": "エイリアスが登録されていません",
   "commands.calias.listAliases.success": "%s 個のエイリアスが登録されています: ",
   "commands.calias.notFound": "エイリアス \"%s\" が見つかりません",
@@ -54,7 +54,7 @@
   "commands.ccalcstack.success.exact": "%s %s はちょうど %s スタックです",
 
   "commands.ccrackrng.failed": "プレイヤーのシードをクラックするのに失敗しました",
-  "commands.ccrackrng.failed.help": "ヘルプ: RNG操作は一部のサーバーでは動作不可能です。特にPaperベースのサーバーでは動きません。",
+  "commands.ccrackrng.failed.help": "ヘルプ: RNG操作は一部のサーバーでは動作不可能です。特にPaperベースのサーバーでは動きません",
   "commands.ccrackrng.retries": "プレイヤーシードをクラックしています: 試行回数 %s/%s",
   "commands.ccrackrng.starting": "プレイヤーシードをクラックしています",
   "commands.ccrackrng.success": "プレイヤーシードのクラックに成功しました: %s",
@@ -73,11 +73,11 @@
   "commands.ccreativetab.setStack.success": "\"%s\"からのスタックを索引%sに%sを保存するのに成功しました",
 
   "commands.cenchant.failed": "それらのエンチャントを取得するのは不可能であるか、時間がかかりすぎます",
-  "commands.cenchant.help.uncrackedPlayerSeed": "ヘルプ: プレイヤーのシードは完全にクラックされていません。",
+  "commands.cenchant.help.uncrackedPlayerSeed": "ヘルプ: プレイヤーのシードは完全にクラックされていません",
   "commands.cenchant.incompatible": "競合するエンチャント",
   "commands.cenchant.needEnchantingPrediction": "このコマンドはenchant predictionが有効化されている必要があります",
   "commands.cenchant.success": "エンチャント操作を開始しています",
-  "commands.cenchant.uncracked": "シードがクラックされる必要があります。",
+  "commands.cenchant.uncracked": "シードがクラックされる必要があります",
 
   "commands.cfind.found": " %s を次の場所で発見しました: %s, %s ブロック分離れています",
   "commands.cfind.keepSearching.success": "エンティティを検索しています",

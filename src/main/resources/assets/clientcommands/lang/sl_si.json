@@ -11,9 +11,9 @@
 
   "commands.cenchant.failed": "Nemogoče je ali bi trajalo pre dolgo, da bi dobile te čare",
   "commands.cenchant.incompatible": "Nezdružljivi čari",
-  "commands.cenchant.needEnchantingPrediction": "Ta ukaz zahteva, da je omogočeno predvidevanje čaranja.",
+  "commands.cenchant.needEnchantingPrediction": "Ta ukaz zahteva, da je omogočeno predvidevanje čaranja",
   "commands.cenchant.success": "Začatek manipulacije čaranja",
-  "commands.cenchant.uncracked": "Seme mora biti ugotovljeno.",
+  "commands.cenchant.uncracked": "Seme mora biti ugotovljeno",
 
   "commands.cfind.found": "Najdeno %s ob %s, %s blokov proč",
   "commands.cfind.noMatch": "Nič se ne ujema z vašo poizvedbo",
@@ -24,7 +24,7 @@
 
   "commands.cfinditem.match": "%sx %s najdeno ob %s",
   "commands.cfinditem.starting": "Iskati %s",
-  "commands.cfinditem.starting.keepSearching": "Neskončno iskanje za %s.",
+  "commands.cfinditem.starting.keepSearching": "Neskončno iskanje za %s",
   "commands.cfinditem.total": "Skupno najdeno %sx %s",
 
   "commands.client.blockpos": "(%s, %s, %s)",

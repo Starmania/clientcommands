@@ -4,7 +4,7 @@
   "c2cpacket.messageC2CPacket.incoming": "%s -> 你：%s",
   "c2cpacket.messageC2CPacket.outgoing": "你 -> %s：%s",
   "c2cpacket.publicKeyNotFound": "未找到公共密匙",
-  "c2cpacket.receivedC2CPacket": "你收到了一个客户端到客户端数据包，但你不接受传入客户端到客户端的数据包！悬停以查看原始数据包。",
+  "c2cpacket.receivedC2CPacket": "你收到了一个客户端到客户端数据包，但你不接受传入客户端到客户端的数据包！悬停以查看原始数据包",
   "c2cpacket.sentC2CPacket": "你发送了一个客户端到客户端数据包，但你不接受传入客户端到客户端的数据包！",
 
   "chorusManip.goalTooFar": "目标过远！",
@@ -54,7 +54,7 @@
   "commands.ccalcstack.success.exact": "%s个%s是正好%s组",
 
   "commands.ccrackrng.failed": "破解玩家随机种子失败",
-  "commands.ccrackrng.failed.help": "提示：RNG控制并不在一些被修改过的服务器有效，特别是Paper端。",
+  "commands.ccrackrng.failed.help": "提示：RNG控制并不在一些被修改过的服务器有效，特别是Paper端",
   "commands.ccrackrng.retries": "正在破解玩家随机种子，尝试次数：%s/%s",
   "commands.ccrackrng.starting": "正在破解玩家随机种子",
   "commands.ccrackrng.success": "成功破解玩家随机种子：%s",

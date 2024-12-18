@@ -133,7 +133,7 @@
   "commands.client.expectedRegex": "Nieprawidłowe wyrażenie regularne %s",
   "commands.client.glow": "[Podświetl]",
   "commands.client.invalidArgumentException": "Nieprawidłowy argument '%s'",
-  "commands.client.notClient": "To nie jest polecenie klienta.",
+  "commands.client.notClient": "To nie jest polecenie klienta",
   "commands.client.tooFewArguments": "Zbyt mało argumentów",
 
   "commands.cparticle.success": "Pokazuję cząsteczkę %s",
@@ -154,7 +154,7 @@
   "commands.cstopsound.success.sourceless.any": "Zatrzymano wszystkie dźwięki",
   "commands.cstopsound.success.sourceless.sound": "Zatrzymano dźwięk '%s'",
 
-  "commands.ctask.list.noTasks": "Nie ma w tej chwili działających zadań.",
+  "commands.ctask.list.noTasks": "Nie ma w tej chwili działających zadań",
   "commands.ctask.list.success": "Działające zadania: %s",
   "commands.ctask.stop.noMatch": "Żadnych pasujących zadań",
   "commands.ctask.stop.success": "Zatrzymano %s zadań",
