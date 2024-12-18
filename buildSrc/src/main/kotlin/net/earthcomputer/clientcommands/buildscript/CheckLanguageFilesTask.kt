@@ -15,6 +15,8 @@ abstract class CheckLanguageFilesTask : DefaultTask() {
     companion object {
         private val formatSpecifierRegex = "%((?<argIndex>\\d+)\\$)?[-#+ 0,(<]*\\d*(\\.\\d+)?[tT]?[a-zA-Z%]".toRegex()
         private val allowedFormatSpecifierRegex = "%(%|(\\d+\\$)?s)".toRegex()
+
+        private val nonSpaceWhitespaceRegex = "[^\\S ]".toRegex()
     }
 
     @get:InputDirectory
@@ -275,6 +277,10 @@ abstract class CheckLanguageFilesTask : DefaultTask() {
             errored = true
         }
 
+        if (!checkStrayWhitespace(filename, lineNumber, key, value)) {
+            errored = true
+        }
+
         if (!checkNotEndWithPeriod(filename, lineNumber, key, value)) {
             errored = true
         }
@@ -302,6 +308,32 @@ abstract class CheckLanguageFilesTask : DefaultTask() {
         }
 
         return true
+    }
+
+    private fun checkStrayWhitespace(filename: String, lineNumber: Int, key: String, value: String): Boolean {
+        var errored = false
+
+        if (nonSpaceWhitespaceRegex.find(value) != null) {
+            logger.error("$filename:$lineNumber: translation '$key' contains a whitespace character which isn't a space")
+            errored = true
+        }
+
+        if (value.startsWith(' ')) {
+            logger.error("$filename:$lineNumber: translation '$key' starts with a space")
+            errored = true
+        }
+
+        if (value.endsWith(' ')) {
+            logger.error("$filename:$lineNumber: translation '$key' ends with a space")
+            errored = true
+        }
+
+        if (value.contains("  ")) {
+            logger.error("$filename:$lineNumber: translation '$key' contains duplicate space")
+            errored = true
+        }
+
+        return !errored
     }
 
     private fun checkNotEndWithPeriod(filename: String, lineNumber: Int, key: String, value: String): Boolean {
