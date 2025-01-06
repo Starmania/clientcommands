@@ -1,3 +1,4 @@
+// CHECKSTYLE:OFF: AvoidStarImport allow commands to be wildcard imported
 package net.earthcomputer.clientcommands;
 
 import com.mojang.brigadier.CommandDispatcher;
