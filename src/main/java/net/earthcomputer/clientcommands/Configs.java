@@ -104,15 +104,15 @@ public class Configs {
         Configs.maxEnchantLevels = Math.max(Configs.maxEnchantLevels, Configs.minEnchantLevels);
     }
 
-    @Config(setter = @Config.Setter("setMaxExperienceConsumed"), temporary = true)
-    private static int maxExperienceConsumed = 3;
+    @Config(setter = @Config.Setter("setMaxEnchantSlot"), temporary = true)
+    private static int maxEnchantSlot = 3;
 
-    public static int getMaxExperienceConsumed() {
-        return maxExperienceConsumed;
+    public static int getMaxEnchantSlot() {
+        return maxEnchantSlot;
     }
 
-    public static void setMaxExperienceConsumed(int minEnchantLevels) {
-        Configs.maxExperienceConsumed = Mth.clamp(maxExperienceConsumed, 1, 3);
+    public static void setMaxEnchantSlot(int minEnchantLevels) {
+        Configs.maxEnchantSlot = Mth.clamp(maxEnchantSlot, 1, 3);
     }
 
     @Config(setter = @Config.Setter("setMaxEnchantLevels"), temporary = true)
